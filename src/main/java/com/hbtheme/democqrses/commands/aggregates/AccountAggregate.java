@@ -40,7 +40,7 @@ public class AccountAggregate {
             throw new RuntimeException("Unable to create an account with a negative balance!");
         }
         AggregateLifecycle.apply(
-                new AccountCreatedEvent(command.getId(), command.getInitialBalance(), command.getCurrency())
+                new AccountCreatedEvent(command.getId(), command.getInitialBalance(), command.getCurrency(), AccountStatus.CREATED)
         );
     }
 
